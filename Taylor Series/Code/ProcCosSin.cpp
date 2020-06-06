@@ -65,3 +65,16 @@ float ProcCosSin::Cosin(float x, int n)
          return 1;
     return 1-x*x/( (2*n-1)*2*n ) * Cosin(x, n+1);
 }
+
+////////////////////////////////////////////////////////////////////////
+// Name:       proTang::calcTang()
+// Purpose:    Implementation of proTang::calcTang()
+// Return:     float
+////////////////////////////////////////////////////////////////////////
+
+float ProcCosSin::calcTang(float x, int n)
+{
+   if( n > MAX )
+         return 1;
+    return (x-x*x/(((2*n+1)-1)*(2*n+1)  ) * Sin(x, n+1))/(1-x*x/( (2*n-1)*2*n ) * Cosin(x, n+1));
+}

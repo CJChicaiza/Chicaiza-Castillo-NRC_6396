@@ -15,6 +15,7 @@ int main (){
 	x=degToRad(x);
 	aSin=ObjCosSin.Sin(x,1);
 	aCos=ObjCosSin.Cosin(x,1);
-	printf("\nEl valor de X en radianes es:	%f\nSu Seno es:	%f\nSu Coseno es:	%f\n",x,aSin,aCos);
+	aTan=ObjCosSin.calcTang(x,1);
+	printf("\nEl valor de X en radianes es:	%f\nSu Seno es:	%f\nSu Coseno es:	%f\nSu tangente es: %f\n ",x,aSin,aCos,aTan);
 	return 0;	
 }

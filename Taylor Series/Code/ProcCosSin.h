@@ -15,6 +15,7 @@ public:
    ~ProcCosSin();
    float Sin(float x, int n);
    float Cosin(float x, int n);
+	float calcTang(float x, int n);
 
 protected:
 private:
