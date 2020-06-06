@@ -1,0 +1,16 @@
+﻿  test.cpp
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(6,13): error C2059: syntax error: ']'
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(7,2): error C2065: 'M1': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(8,2): error C2065: 'M1': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(9,2): error C2065: 'M1': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(10,2): error C2065: 'M1': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(11,2): error C2065: 'Mr': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(12,2): error C2065: 'Mr': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(13,2): error C2065: 'Mr': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(14,2): error C2065: 'Mr': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(15,20): error C2065: 'M1': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(15,24): error C2065: 'Mr': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(16,2): error C2065: 'M1': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(16,2): error C2065: 'Mr': undeclared identifier
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\test.cpp(16,2): error C2512: 'testing::AssertionResult': no appropriate default constructor available
+C:\Users\user\Documents\GitHub\Estructura_de_Datos-6547\Pow Matrix\PMUTest\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\include\gtest\gtest.h(281,18): message : see declaration of 'testing::AssertionResult'
