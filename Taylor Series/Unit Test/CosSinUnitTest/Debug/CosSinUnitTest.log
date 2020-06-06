@@ -1,1 +1,10 @@
-﻿  CosSinUnitTest.vcxproj -> C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\CosSinUnitTest\Debug\CosSinUnitTest.exe
+﻿  test.cpp
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(19,2): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(24,2): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(39,2): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(44,2): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(49,2): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(54,2): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(59,2): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\test.cpp(64,2): warning C4305: 'argument': truncation from 'double' to 'float'
+LINK : fatal error LNK1104: cannot open file 'C:\Users\user\Documents\GitHub\Chicaiza-Castillo-NRC_6396\Taylor Series\Unit Test\CosSinUnitTest\packages\Microsoft.googletest.v140.windesktop.msvcstl.static.rt-dyn.1.8.1\build\native\..\..\lib\native\v140\windesktop\msvcstl\static\rt-dyn\x86\Debug\gtest_maind.lib'
