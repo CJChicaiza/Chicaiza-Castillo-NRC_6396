@@ -103,7 +103,6 @@ bool Pareja::operator == (const Pareja &p) const
 bool Pareja::operator >= (const Pareja &p) const
 {
 	return (sqrt(a*a+b*b)) >= (sqrt(p.a*p.a+p.b*p.b));
-    //return this->a >= p.a && this->b >= p.b;
 }
 
 // implemetaci¢n de operadores no miembros
@@ -158,9 +157,11 @@ int main(int argc, char** argv) {
     cout << "B = " << B << endl;
     cout << "........................." << endl;
     Pareja D (2,1);
-    Pareja E (3,1);
+    Pareja E (2,1);
+    cout << "D = " << D << "\n";
+    cout << "E = " << E << "\n";
     a= D>=E;
-    cout << " Es D >= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "Es D >= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
 	return 0;
 }
