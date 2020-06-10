@@ -31,6 +31,7 @@ public:
     Pareja& operator ++();
     bool    operator ==(const Pareja &p) const;
     bool    operator >=(const Pareja &p) const;
+    bool    operator <(const Pareja &p) const;
 
     // operadores no miembros
     friend ostream& operator << (ostream &o,const Pareja &p);
@@ -96,13 +97,22 @@ bool Pareja::operator == (const Pareja &p) const
 }
 //....................................
 //Implementado por: Cristopher Chicaiza
-//Funcion que determina >= de dos clases
+//Funcion que determina >= de dos clases mediante el modulo
 //8-jun-2020
 //....................................
 
 bool Pareja::operator >= (const Pareja &p) const
 {
 	return (sqrt(a*a+b*b)) >= (sqrt(p.a*p.a+p.b*p.b));
+}
+//Implementado por: Cristopher Chicaiza
+//Funcion que determina < de dos clases mediante el modulo
+//8-jun-2020
+//....................................
+
+bool Pareja::operator < (const Pareja &p) const
+{
+	return (sqrt(a*a+b*b)) < (sqrt(p.a*p.a+p.b*p.b));
 }
 
 // implemetaci¢n de operadores no miembros
@@ -162,6 +172,13 @@ int main(int argc, char** argv) {
     cout << "E = " << E << "\n";
     a= D>=E;
     cout << "Es D >= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "........................." << endl;
+   	Pareja F (3,1);
+    Pareja G (2,1);
+    cout << "F = " << F << "\n";
+    cout << "G = " << G << "\n";
+    a= F<G;
+    cout << "Es F < G ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
 	return 0;
 }
