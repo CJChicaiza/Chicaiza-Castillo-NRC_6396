@@ -34,6 +34,7 @@ public:
     bool    operator !=(const Pareja &p) const;
     bool    operator >=(const Pareja &p) const;
     bool    operator <(const Pareja &p) const;
+    bool    operator >(const Pareja &p) const;
 
     // operadores no miembros
     friend ostream& operator << (ostream &o,const Pareja &p);
@@ -122,23 +123,33 @@ bool Pareja::operator == (const Pareja &p) const
 }
 //....................................
 //Implementado por: Cristopher Chicaiza
-//Funcion que determina >= de dos clases mediante el modulo
+//Funcion que determina >= de dos clases mediante el modulo cast de int a float
 //8-jun-2020
 //....................................
 
 bool Pareja::operator >= (const Pareja &p) const
 {
-	return (sqrt(a*a+b*b)) >= (sqrt(p.a*p.a+p.b*p.b));
+	return float((sqrt(a*a+b*b)))  >= float((sqrt(p.a*p.a+p.b*p.b)));
 }
 //Implementado por: Cristopher Chicaiza
-//Funcion que determina < de dos clases mediante el modulo
-//8-jun-2020
+//Funcion que determina < de dos clases mediante el modulo cast de int a float
+//9-jun-2020
 //....................................
 
 bool Pareja::operator < (const Pareja &p) const
 {
-	return (sqrt(a*a+b*b)) < (sqrt(p.a*p.a+p.b*p.b));
+	return float((sqrt(a*a+b*b)))  < float((sqrt(p.a*p.a+p.b*p.b)));
 }
+//Implementado por: Cristopher Chicaiza
+//Funcion que determina > de dos clases mediante el modulo cast de int a floato
+//10-jun-2020
+//....................................
+
+bool Pareja::operator > (const Pareja &p) const
+{
+	return float((sqrt(a*a+b*b)))  > float((sqrt(p.a*p.a+p.b*p.b)));
+}
+
 
 // implemetaci¢n de operadores no miembros
 ostream& operator << (ostream &o,const Pareja &p)
@@ -199,15 +210,15 @@ int main(int argc, char** argv) {
     Pareja E (2,1);
     cout << "D = " << D << "\n";
     cout << "E = " << E << "\n";
-    a= D>=E;
+    a=D>=E;
     cout << "Es D >= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
-   	Pareja F (3,1);
-    Pareja G (2,1);
-    cout << "F = " << F << "\n";
-    cout << "G = " << G << "\n";
-    a= F<G;
-    cout << "Es F < G ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    a=D<E;
+    cout << "Es D < E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
+    a=D>E;
+    cout << "Es D > E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "........................." << endl;
+    
 	return 0;
 }
