@@ -28,8 +28,10 @@ public:
     Pareja& operator * (const Pareja &p);
     Pareja& operator / (const Pareja &p);
     Pareja& operator = (const Pareja &p);
+	Pareja& operator % (const Pareja &p);
     Pareja& operator ++();
     bool    operator ==(const Pareja &p) const;
+    bool    operator !=(const Pareja &p) const;
     bool    operator >=(const Pareja &p) const;
     bool    operator <(const Pareja &p) const;
 
@@ -37,6 +39,7 @@ public:
     friend ostream& operator << (ostream &o,const Pareja &p);
     friend istream& operator >> (istream &o, Pareja &p);
 };
+
 
 // implementacion de los operadores para la clase Pareja
 //....................................
@@ -81,6 +84,18 @@ Pareja& Pareja::operator = (const Pareja &p)
     }
     return *this;
 }
+//....................................
+//Implementado por: Angel Castillo
+//Funcion que determina % de dos clases mediante el modulo
+//9-jun-2020
+//....................................
+
+Pareja& Pareja::operator % (const Pareja &p)
+{
+        if (p.a != 0) this->a % p.a;
+        if (p.b != 0) this->b % p.b;
+    return *this;
+}
 
 //....................................
 Pareja& Pareja::operator ++ ()
@@ -88,6 +103,16 @@ Pareja& Pareja::operator ++ ()
     this->a ++;
     this->b ++;
     return *this;
+}
+//....................................
+//Implementado por: Angel Castillo
+//Funcion que determina != de dos clases mediante el modulo
+//9-jun-2020
+//....................................
+
+bool Pareja::operator != (const Pareja &p) const
+{
+    return this->a == p.a && this->b == p.b;
 }
 
 //....................................
@@ -148,14 +173,18 @@ int main(int argc, char** argv) {
  	C = A * B;
     cout << "A = " << A << "\n";
     cout << "C = " << C << endl;
-    cout << "........................." << endl;   
+    cout << "........................." << endl;
+	C = A % B;
+    cout << "A = " << A << "\n";
+    cout << "C = " << C << endl;
+    cout << "........................." << endl;     
  	C = A / B;
     cout << "A = " << A << "\n";
     cout << "C = " << C << endl;
-    cout << "........................." << endl;   
-    C = A / B;
-    cout << "A = " << A << "\n";
+    cout << "........................." << endl;  
+	++C;
     cout << "C = " << C << endl;
+    cout << "A != B " << ( (A!=B) ? "Si": "No" );
     cout << "........................." << endl;
     ++C;
     cout << "C = " << C << endl;
