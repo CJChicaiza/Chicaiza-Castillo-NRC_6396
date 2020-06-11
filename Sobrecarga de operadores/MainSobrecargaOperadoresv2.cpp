@@ -33,6 +33,7 @@ public:
     bool    operator ==(const Pareja &p) const;
     bool    operator !=(const Pareja &p) const;
     bool    operator >=(const Pareja &p) const;
+    bool    operator <=(const Pareja &p) const;
     bool    operator <(const Pareja &p) const;
     bool    operator >(const Pareja &p) const;
 
@@ -131,6 +132,15 @@ bool Pareja::operator >= (const Pareja &p) const
 {
 	return float((sqrt(a*a+b*b)))  >= float((sqrt(p.a*p.a+p.b*p.b)));
 }
+//....................................
+//Implementado por: Angel Castillo
+//Funcion que determina != de dos clases mediante el modulo
+//10-jun-2020
+//....................................
+bool Pareja::operator <= (const Pareja &p) const
+{
+	return float((sqrt(a*a+b*b)))  <= float((sqrt(p.a*p.a+p.b*p.b)));
+}
 //Implementado por: Cristopher Chicaiza
 //Funcion que determina < de dos clases mediante el modulo cast de int a float
 //9-jun-2020
@@ -212,6 +222,9 @@ int main(int argc, char** argv) {
     cout << "E = " << E << "\n";
     a=D>=E;
     cout << "Es D >= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "........................." << endl;
+    a=D<=E;
+    cout << "Es D <= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
     a=D<E;
     cout << "Es D < E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
