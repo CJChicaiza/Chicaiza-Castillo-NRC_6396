@@ -30,12 +30,14 @@ public:
     Pareja& operator = (const Pareja &p);
 	Pareja& operator % (const Pareja &p);
     Pareja& operator ++();
+    Pareja& operator --();
     bool    operator ==(const Pareja &p) const;
     bool    operator !=(const Pareja &p) const;
     bool    operator >=(const Pareja &p) const;
     bool    operator <=(const Pareja &p) const;
     bool    operator <(const Pareja &p) const;
     bool    operator >(const Pareja &p) const;
+    bool    operator ||(const int) const;
 
     // operadores no miembros
     friend ostream& operator << (ostream &o,const Pareja &p);
@@ -134,7 +136,7 @@ bool Pareja::operator >= (const Pareja &p) const
 }
 //....................................
 //Implementado por: Angel Castillo
-//Funcion que determina != de dos clases mediante el modulo
+//Funcion que determina <= de dos clases mediante el modulo
 //10-jun-2020
 //....................................
 bool Pareja::operator <= (const Pareja &p) const
@@ -151,7 +153,7 @@ bool Pareja::operator < (const Pareja &p) const
 	return float((sqrt(a*a+b*b)))  < float((sqrt(p.a*p.a+p.b*p.b)));
 }
 //Implementado por: Cristopher Chicaiza
-//Funcion que determina > de dos clases mediante el modulo cast de int a floato
+//Funcion que determina > de dos clases mediante el modulo cast de int a float
 //10-jun-2020
 //....................................
 
@@ -159,6 +161,28 @@ bool Pareja::operator > (const Pareja &p) const
 {
 	return float((sqrt(a*a+b*b)))  > float((sqrt(p.a*p.a+p.b*p.b)));
 }
+
+//Implementado por: Cristopher Chicaiza
+//Funcion que realiza una resta tipo -- a una clase
+//11-jun-2020
+//....................................
+Pareja& Pareja::operator -- ()
+{
+    this->a --;
+    this->b --;
+    return *this;
+}
+
+//Implementado por: Cristopher Chicaiza
+//Funcion que determina si existe un elemento en una clase
+//12-jun-2020
+//....................................
+
+bool Pareja::operator || (const int comparar) const
+{
+    return a==comparar||b==comparar;
+}
+
 
 
 // implemetaci¢n de operadores no miembros
@@ -221,17 +245,21 @@ int main(int argc, char** argv) {
     cout << "D = " << D << "\n";
     cout << "E = " << E << "\n";
     a=D>=E;
-    cout << "Es D >= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "Es D >= E ?	R: " << a << "	(siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
     a=D<=E;
-    cout << "Es D <= E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "Es D <= E ?	R: " << a << "	(siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
     a=D<E;
-    cout << "Es D < E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "Es D < E ?	R: " << a << "	(siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
     a=D>E;
-    cout << "Es D > E ?  R: " << a << " (siendo 0 = falso y 1 = verdadero)\n";
+    cout << "Es D > E ?	R: " << a << "	(siendo 0 = falso y 1 = verdadero)\n";
     cout << "........................." << endl;
-    
+    --D;
+    cout << "D = " << D << "\n";
+    a= D||0;
+    cout << "Existe un elemento con valor 0 en D ?  	R: " << a << "	(siendo 0 = falso y 1 = verdadero)\n";
+    cout << "........................." << endl;
 	return 0;
 }
