@@ -12,14 +12,19 @@
 #include "conio.h"
 #include "Matrix.cpp"
 #include "Matrix.h"
+#include <sstream>
+#include "Ingreso.h"
+
 int main()
 {
 	Matrix objMat;
+	Ingreso ingreso;
+	string n;
 	int d,p;
 	int **mat1, **matr;
 	
-	printf("\nIngrese la dimension de la matriz: ");
-	scanf("%d",&d);
+	n=ingreso.leer("Ingrese el numero n: ",2);
+	istringstream (n) >> d;
 	
 
 	mat1=objMat.nmatrix(d);

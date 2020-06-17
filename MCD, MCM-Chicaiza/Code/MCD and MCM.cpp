@@ -14,13 +14,17 @@
 #include <stdio.h>
 #include <ctype.h>
 #include "Array.cpp"
+#include <sstream>
+#include "Ingreso.h"
 
 int main(int argc, char *argv[])
 {
 	int d,mcd,mcm;
+	Ingreso ingreso;
+	string n;
 	Array objArray;
-	printf("Ingrese el tamaño del array:	");
-	scanf("%d",&d);
+	n=ingreso.leer("Ingrese el numero n: ",2);
+	istringstream (n) >> d;
 	int *v=new int[d];
 	objArray.wax(v,d);
 	objArray.print(v,d);
