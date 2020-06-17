@@ -16,7 +16,7 @@ int main (){
 	Ingreso ingreso;
 	n=ingreso.leer("Ingrese el valor de x:	",2);
 	istringstream (n) >> x;
-	cout<<x<<endl;
+//	cout<<x<<endl;
 	x=degToRad(x);
 	aSin=ObjCosSin.Sin(x,1);
 	aCos=ObjCosSin.Cosin(x,1);

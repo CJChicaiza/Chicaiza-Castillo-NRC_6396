@@ -26,9 +26,6 @@ bool Validacion::validar(string entrada, int tipo) {
 	int contador = 0;
 	try {
 		for (int i = 0; i < entrada.length(); i++) {
-			if (entrada[i] == '-') {
-				i++;
-			}
 			if (isalpha(entrada[i])) {
 				throw 1;
 			}
@@ -39,9 +36,9 @@ bool Validacion::validar(string entrada, int tipo) {
 				contador++;
 			}
 					
-			if ((isdigit(entrada[i]) == 0 && entrada[i] != '.') || (contador>1)) {				
+			if ((isdigit(entrada[i]) == 0 && entrada[i] != '.' && entrada[i] != '-') || (contador>1)) {				
 				throw 1;
-			}
+			}	
 			
 		}	
 	}
