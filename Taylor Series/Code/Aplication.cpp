@@ -6,12 +6,17 @@
 #include <ctype.h>
 #include "ProcCosSin.cpp"
 #include "LibraryCris.h"
+#include "Ingreso.h"
+#include <sstream>
 
 int main (){
 	ProcCosSin ObjCosSin;
+	string n;
 	float x,aCos,aSin,aTan;	
-	printf("Ingrese el valor de x:	");
-	scanf("%f",&x);
+	Ingreso ingreso;
+	n=ingreso.leer("Ingrese el valor de x:	",2);
+	istringstream (n) >> x;
+	cout<<x<<endl;
 	x=degToRad(x);
 	aSin=ObjCosSin.Sin(x,1);
 	aCos=ObjCosSin.Cosin(x,1);
