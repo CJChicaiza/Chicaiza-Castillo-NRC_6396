@@ -14,8 +14,8 @@ public:
    void encerar(int **matriz, int n);
    void ingresar(int **matriz, int n);
    void imprimir(int **matriz, int n);
-   int tamano(int n);
-   void calculo(int **matriz, int **mat1, int n, int potencia);
+   int **tamano(int n);
+   void calculo(int **matriz, int **mat1, int n, int e);
 
 protected:
 private:

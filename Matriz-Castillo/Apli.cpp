@@ -1,4 +1,5 @@
 #include "Matriz.cpp"
+#include "Matriz.h"
 #include <iostream>
 #include <stdlib.h>
 #include <conio.h>
@@ -13,7 +14,7 @@
  ***********************************************************************/
 using namespace std;
 
-int main(int argc, char *argv[]){
+int main(){
 	
 	int n,p;
 	int **matriz,**matriz1;
@@ -22,11 +23,11 @@ int main(int argc, char *argv[]){
 	cin >> n;
 	matriz=matr.tamano(n);
 	matriz1=matr.tamano(n);
-	matr.encerar(matriz,n);
-	matr.imprimir(matriz,n);
+	matr.encerar(matriz1,n);
+	matr.imprimir(matriz1,n);
 	system("pause");
 
-	cout<<"Ingrese la dimencion de la matriz"<<endl;
+	cout<<"Ingrese los datos de la matriz"<<endl;
 	matr.ingresar(matriz,n);
 	matr.imprimir(matriz,n);
 	cout<<endl;
@@ -35,7 +36,8 @@ int main(int argc, char *argv[]){
 	cout<<"Ingrese la patencia"<<endl;
 	cin >> p;
 	matr.calculo(matriz,matriz1,n,p);
-	matr.imprimir(matriz,n);
+	matr.imprimir(matriz1,n);
 	system("pause");
 	return 0;
+	
 }

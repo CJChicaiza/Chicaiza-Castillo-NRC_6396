@@ -21,10 +21,10 @@
 
 void Matriz::encerar(int **matriz, int n)
 {
-
-    for(int i=0;i<n;i++)
-        for(int j=0;j<n;j++)
-           ** ((matriz+i)+j)=0;
+   int i, j;
+    for(i=0;i<n;i++)
+        for(j=0;j<n;j++)
+            *(*(matriz+i)+j)=0;
     return;
 }
 
@@ -41,7 +41,7 @@ void Matriz::ingresar(int **matriz, int n)
 {
 	for(int i=0;i<n;i++)
 		for(int j=0;j<n;j++)
-			scanf("%d",&**(((matriz+i)+j)));
+			scanf("%d",&(*(*(matriz+i)+j)));
 
 }
 
@@ -59,7 +59,7 @@ void Matriz::imprimir(int **matriz, int n)
       for(int i=0;i<n;i++){
 		for(int j=0;j<n;j++)
 		{
-			printf("%d",((matriz+i)+j));
+			printf("%d",*(*(matriz+i)+j));
 			printf("%*s",j+5,"");
 		}
 	printf("\n");
@@ -74,14 +74,15 @@ void Matriz::imprimir(int **matriz, int n)
 // Return:     int
 ////////////////////////////////////////////////////////////////////////
 
-int Matriz::tamano(int n)
+int  **Matriz::tamano(int n)
 {
-  int **m , j;
+   int **m , j;
     m =(int **)malloc(n*sizeof(int *));
     for(j=0;j<n;j++)
-        **(m+j)=(int )malloc(n*sizeof(int));
-    return **m;
+        *(m+j)=(int *)malloc(n*sizeof(int));
+    return m;
 }
+
 
 ////////////////////////////////////////////////////////////////////////
 // Name:       Matriz::calculo(int __matriz, int __mat1, int n, int potencia)
@@ -94,17 +95,17 @@ int Matriz::tamano(int n)
 // Return:     void
 ////////////////////////////////////////////////////////////////////////
 
-void Matriz::calculo(int **matriz1,int **matriz, int n, int potencia)
+void Matriz::calculo(int ** mat1, int ** matr, int n, int e)
 {
-   int **matf;//=tamano(n);
-	int **matf2;//=tamano(n);
+	int **matf=tamano(n);
+	int **matf2=tamano(n);
 	encerar(matf2,n);
-	for(int k=1;k<=potencia;k++){
+	for(int k=1;k<=e;k++){
 	encerar(matf2,n);
 		if(k==1){
 			for(int i=0;i<n;i++){
 				for(int j=0;j<n;j++){
-						**((matf+i)+j)=**((matriz1+i)+j);
+						*(*(matf+i)+j)=*(*(mat1+i)+j);
 				}
 			}
 		}
@@ -112,8 +113,8 @@ void Matriz::calculo(int **matriz1,int **matriz, int n, int potencia)
    			for(int i=0;i<n;i++){
 				for(int j=0;j<n;j++){
 					for(int h=0;h<n;h++){
-						**((matf+i)+j)=**((matf2+i)+j)+(**(matriz+i)+h)*(**(matriz1+h)+j);
-						**((matf2+i)+j)=**((matf+i)+j);
+						*(*(matf+i)+j)=*(*(matf2+i)+j)+(*(*(matr+i)+h))*(*(*(mat1+h)+j));
+						*(*(matf2+i)+j)=*(*(matf+i)+j);
 						
 					}
 				}
@@ -121,7 +122,7 @@ void Matriz::calculo(int **matriz1,int **matriz, int n, int potencia)
 		}
 		for(int i=0;i<n;i++){
 				for(int j=0;j<n;j++){
-						**((matriz+i)+j)=**((matf+i)+j);
+						*(*(matr+i)+j)=*(*(matf+i)+j);
 				}
 			}
 	}
