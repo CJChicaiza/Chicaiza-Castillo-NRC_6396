@@ -24,7 +24,9 @@ public:
 
     // operadores miembros
     Pareja& operator + (const Pareja &p);
+    Pareja& operator +=(const Pareja &p);
     Pareja& operator - (const Pareja &p);
+    Pareja& operator -=(const Pareja &p);
     Pareja& operator * (const Pareja &p);
     Pareja& operator / (const Pareja &p);
     Pareja& operator = (const Pareja &p);
@@ -52,6 +54,18 @@ Pareja::Pareja(const Pareja &p)
     *this=p;
 }
 //....................................
+//Implementado por: Angel Castillo
+//Funcion que determina +=  de dos clases mediante el modulo
+//12-jun-2020
+//....................................
+
+Pareja& Pareja::operator +=(const Pareja &p)
+{
+    this->a += p.a;
+    this->b += p.b;
+    return *this;
+}
+//....................................
 Pareja& Pareja::operator + (const Pareja &p)
 {
     this->a += p.a;
@@ -60,6 +74,19 @@ Pareja& Pareja::operator + (const Pareja &p)
 }
 //....................................
 Pareja& Pareja::operator - (const Pareja &p)
+{
+    this->a -= p.a;
+    this->b -= p.b;
+    return *this;
+}
+//....................................
+//....................................
+//Implementado por: Angel Castillo
+//Funcion que determina -=  de dos clases mediante el modulo
+//12-jun-2020
+//....................................
+
+Pareja& Pareja::operator -=(const Pareja &p)
 {
     this->a -= p.a;
     this->b -= p.b;
@@ -211,9 +238,18 @@ int main(int argc, char** argv) {
     cout << "A = " << A << "\n";
     cout << "C = " << C << endl;
     cout << "........................." << endl;
+    
+    C = A += B;
+    cout << "A += " << A << "\n";
+    cout << "C += " << C << endl;
+    cout << "........................." << endl;
 	C = A - B;
     cout << "A = " << A << "\n";
     cout << "C = " << C << endl;
+    cout << "........................." << endl;
+        C = A -= B;
+    cout << "A -= " << A << "\n";
+    cout << "C -= " << C << endl;
     cout << "........................." << endl;
  	C = A * B;
     cout << "A = " << A << "\n";
