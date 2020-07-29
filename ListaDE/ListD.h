@@ -16,12 +16,12 @@ public:
     void anadirInicio(T dato);
     void anadirFinal(T dato);
     void anadirMitad(T dato, int position);
+
     void borrarInicio();
     void borrarFinal();
     void borrarMitad(int posicion);
-    void imprimir();
-    int tamano();
 
+    int tamano();
     bool vacio();
 
     string to_string();

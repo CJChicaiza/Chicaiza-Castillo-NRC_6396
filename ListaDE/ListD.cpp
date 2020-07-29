@@ -6,7 +6,7 @@
 #include "ListD.h"
 #include "NodeD.cpp"
 
-//#pragma once
+#pragma once
 
 using namespace std;
 
@@ -210,21 +210,6 @@ string ListaDoble<T>::to_string() {
     return oss.str();
 }
 
-/*template<class T>
-void ListaDoble<T>::imprimir(){
-
-    NodoDoble<T> *temp = node;
-    if (!node) {
-        cout << "La Lista está vacia " << endl;
-    } else {
-        while (temp) {
-            temp->print();
-            if (!temp->getSiguienteNode) cout << "NULL";
-                temp = temp->getSiguienteNode;
-        }
-  }
-  cout << endl << endl;
-}*/
 
 template<class T>
 ListaDoble<T>::~ListaDoble() {}

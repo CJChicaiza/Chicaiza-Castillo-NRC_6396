@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "list_D.h"
-#include "list_D.cpp"
+#include "listD.h"
+#include "listD.cpp"
 #include "Libraries/Menu.cpp"
 #include "Libraries/Input.cpp"
 #include "Libraries/To_number.cpp"
@@ -13,7 +13,7 @@ using namespace std;
 
 int option();
 template<typename T>
-void menu(List_Double<T> _list);
+void menu(ListaDoble<T> lista);
 
 int option() {
     Menu _menu;
@@ -31,82 +31,84 @@ int option() {
 }
 
 template<typename T>
-void menu(List_Double<T>* _list) {
-    Input _input;
-    char _answer;
+void menu(ListaDoble<T>* lista) {
+    Input input;
+    char repuesta;
     int i,j;
+    string dato;
 
     switch (option()) {
     case 1:
         do {
             system("cls");
-            i = to_int(_input.input_int_number("Ingrese un numero: "));
-            _list->add_end(i);
+            i = to_int(input.input_int_number("Ingrese un numero: "));
+            lista->anadirFinal(i);
             fflush(stdin);
             cout << "Quiere continuar? (S/N): ";
-            scanf("%c", &_answer);
+            scanf("%c", &repuesta);
             fflush(stdin);
-        } while (_answer != 'N' && _answer != 'n');
+        } while (repuesta != 'N' && repuesta != 'n');
         break;
     case 2:
         do {
             system("cls");
-            i = to_int(_input.input_int_number("Ingrese un numero: "));
-            _list->add_begin(i);
+            i = to_int(input.input_int_number("Ingrese un numero: "));
+            lista->anadirInicio(i);
             fflush(stdin);
             cout << "Quiere continuar? (S/N): ";
-            scanf("%c", &_answer);
+            scanf("%c", &repuesta);
             fflush(stdin);
-        } while (_answer != 'N' && _answer != 'n');
+        } while (repuesta != 'N' && repuesta != 'n');
         break;
     case 3:
         do {
             system("cls");
-            i = to_int(_input.input_int_number("Ingrese un numero: "));
-            j = to_int(_input.input_int_number("Ingrese la posicion: "));
-            _list->add_in(i,j);
+            i = to_int(input.input_int_number("Ingrese un numero: "));
+            j = to_int(input.input_int_number("Ingrese la posicion: "));
+            lista->anadirMitad(i,j);
             fflush(stdin);
             cout << "Quiere continuar? (S/N): ";
-            scanf("%c", &_answer);
+            scanf("%c", &repuesta);
             fflush(stdin);
-        } while (_answer != 'N' && _answer != 'n');
+        } while (repuesta != 'N' && repuesta != 'n');
         break;
     case 4:
         do {
             system("cls");
-            i = to_int(_input.input_int_number("Eliminado por cola  "));
-            _list->_delete_end();
+            i = to_int(input.input_int_number("Eliminado por cola  "));
+            lista->borrarFinal();
             fflush(stdin);
             cout << "Quiere continuar? (S/N): ";
-            scanf("%c", &_answer);
+            scanf("%c", &repuesta);
             fflush(stdin);
-        } while (_answer != 'N' && _answer != 'n');
+        } while (repuesta != 'N' && repuesta != 'n');
         break;
     case 5:
         do {
             system("cls");
-            i = to_int(_input.input_int_number("Eliminado por cabeza "));
-            _list->_delete_end();
+            i = to_int(input.input_int_number("Eliminado por cabeza "));
+            lista->borrarInicio();
             fflush(stdin);
             cout << "Quiere continuar? (S/N): ";
-            scanf("%c", &_answer);
+            scanf("%c", &repuesta);
             fflush(stdin);
-        } while (_answer != 'N' && _answer != 'n');
+        } while (repuesta != 'N' && repuesta != 'n');
         break;
     case 6:
         do {
             system("cls");
-            i = to_int(_input.input_int_number("Ingrese la posicion: "));
-            _list->_delete_in(i);
+            i = to_int(input.input_int_number("Ingrese la posicion: "));
+            lista->borrarMitad(i);
             fflush(stdin);
             cout << "Quiere continuar? (S/N): ";
-            scanf("%c", &_answer);
+            scanf("%c", &repuesta);
             fflush(stdin);
-        } while (_answer != 'N' && _answer != 'n');
+        } while (repuesta != 'N' && repuesta != 'n');
         break;
     case 7:
         system("cls");
-        _list->to_string();
+        dato=lista->to_string();
+        cout << dato<<endl;
         system("pause");
         break;
     default:
@@ -116,9 +118,9 @@ void menu(List_Double<T>* _list) {
 }
 int main()
 {
-    List_Double<int> _list;
+    ListaDoble<int> lista;
     do {
-        menu(&_list);
+        menu(&lista);
     } while (true);
     return 0;
 
